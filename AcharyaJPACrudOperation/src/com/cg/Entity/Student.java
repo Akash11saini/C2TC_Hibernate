@@ -1,7 +1,6 @@
 package com.cg.Entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -10,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="student")
 public class Student implements Serializable {
 	
-	private static final long SerialVersionUID=1L;
+	private static final long serialVersionUID=1L;
 	@Id
 	private int id;
 	private String name;
@@ -26,13 +25,8 @@ public class Student implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	
 	}
-	public static long getSerialversionuid() {
-		return SerialVersionUID;
-	}
-	
-	
-	
 }
 	
 	

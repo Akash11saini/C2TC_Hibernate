@@ -4,12 +4,9 @@ import javax.persistence.EntityManager;
 
 import com.cg.Entity.Student;
 
-public class StudentDaoImpl implements StudentDao{
+public class StudentDaoImpl implements StudentDao {
+	
 	private EntityManager manager;
-	
-	
-
-	
 	public StudentDaoImpl() {
 		manager = JPAUtil.getEntityManager();
 	}
@@ -19,7 +16,7 @@ public class StudentDaoImpl implements StudentDao{
 	@Override
 	public Student getStudentById(int id) {
 		Student student = manager.find(Student.class, id);
-		return null;
+		return student;
 	}
 
 	@Override
@@ -43,16 +40,16 @@ public class StudentDaoImpl implements StudentDao{
 
 
 	@Override
-	public void commitTransaction() {
-		manager.getTransaction().commit();
+	public void beginTransaction() {
+		manager.getTransaction().begin();
 		
 	}
 
 
 
 	@Override
-	public void beginTransaction() {
-		manager.getTransaction().begin();
+	public void commitTransaction() {
+		manager.getTransaction().commit();
 		
 	}
 	
